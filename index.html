@@ -80,6 +80,17 @@ section h3{margin:0 0 12px;font:600 11px 'JetBrains Mono',monospace;letter-spaci
 .p3d h4{margin:4px 0 0;font:600 16px 'Space Grotesk',Inter,sans-serif}
 .p3d p{margin:0;font-size:14px;line-height:1.5;color:#D1D5DB}
 .p3d .meta{font-size:11px;color:#8A939E}
+.lieu{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+.lieu .where{flex:1 1 140px}
+.acad2{color:var(--muted);font-size:13px}
+.mapwrap{flex:999 1 220px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.map{width:100%;height:220px;border:0;border-radius:10px;background:#1C242C;display:block}
+.maptoggle{display:flex;gap:6px}
+.mt{flex:1;min-height:36px;border-radius:8px;border:1px solid var(--line);background:#1C242C;color:var(--text);font:500 13px Inter,sans-serif;cursor:pointer}
+.mt[aria-pressed="true"]{border-color:var(--blue-l);color:#93C5FD}
+.mt:focus-visible,.maplink:focus-visible{outline:2px solid var(--blue-l);outline-offset:2px}
+.maplink{font-size:13px;color:#93C5FD;text-decoration:none;align-self:flex-end}
+.maplink:hover{text-decoration:underline}
 .where{font-size:14px;line-height:1.55;color:#D1D5DB;margin:0}
 .where strong{color:var(--text)}
 .ghost{width:100%;min-height:46px;border-radius:12px;background:transparent;border:1px solid var(--line);color:var(--text);font:500 14px Inter,sans-serif;cursor:pointer}
@@ -176,7 +187,17 @@ footer{text-align:center;font-size:11px;color:#8A939E}
 
 <section aria-labelledby="h-lieu">
   <h3 id="h-lieu">Où me trouver</h3>
-  <p class="where"><strong>Lycée André Citroën</strong><br>5 rue du XIe d’Aviation<br>57155 Marly · Académie de Nancy-Metz</p>
+  <div class="lieu">
+    <p class="where"><strong>Lycée André Citroën</strong><br>5 rue du XIe d’Aviation<br>57155 Marly<br><span class="acad2">Académie de Nancy-Metz</span></p>
+    <div class="mapwrap">
+      <div class="maptoggle" role="group" aria-label="Type de carte">
+        <button type="button" class="mt" data-t="m" aria-pressed="true">Plan</button>
+        <button type="button" class="mt" data-t="k" aria-pressed="false">Satellite</button>
+      </div>
+      <iframe id="gmap" class="map" title="Carte Google Maps du Lycée André Citroën à Marly" src="https://maps.google.com/maps?q=Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%2C%205%20rue%20du%20XIe%20d%27Aviation%2C%2057155%20Marly&amp;t=m&amp;z=16&amp;hl=fr&amp;output=embed" data-q="Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%2C%205%20rue%20du%20XIe%20d%27Aviation%2C%2057155%20Marly" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%2C%205%20rue%20du%20XIe%20d%27Aviation%2C%2057155%20Marly">Ouvrir dans Google Maps ↗</a>
+    </div>
+  </div>
 </section>
 
 <button class="ghost" id="copyCard" type="button">Copier mes coordonnées</button>
@@ -218,6 +239,14 @@ footer{text-align:center;font-size:11px;color:#8A939E}
   });
   if(location.hash==='#impression-3d'){show3d(true,true);}
   window.addEventListener('hashchange',function(){if(location.hash==='#impression-3d')show3d(true,true);});
+
+  var gm=document.getElementById('gmap');
+  document.querySelectorAll('.mt').forEach(function(b){
+    b.addEventListener('click',function(){
+      gm.src='https://maps.google.com/maps?q='+gm.dataset.q+'&t='+b.dataset.t+'&z='+(b.dataset.t==='k'?'18':'16')+'&hl=fr&output=embed';
+      document.querySelectorAll('.mt').forEach(function(o){o.setAttribute('aria-pressed',o===b?'true':'false');});
+    });
+  });
 
   document.getElementById('copyCard').addEventListener('click',function(){
     if(navigator.clipboard&&navigator.clipboard.writeText){
