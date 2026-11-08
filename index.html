@@ -4,9 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Cyrille BIER – Professeur de Lycée Professionnel, Maintenance des Véhicules Automobiles, véhicules électriques et hybrides – Lycée André Citroën, Marly">
-<meta property="og:title" content="Cyrille BIER – Carte de visite">
-<meta property="og:description" content="Professeur MVA · Véhicules électriques &amp; hybrides · Lycée André Citroën, Marly">
-<meta property="og:image" content="photo.jpg">
+<link rel="canonical" href="https://cyrillebier.github.io/">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://cyrillebier.github.io/">
+<meta property="og:title" content="Cyrille BIER – Professeur MVA">
+<meta property="og:description" content="Maintenance des Véhicules Automobiles · Véhicules électriques &amp; hybrides · Lycée André Citroën, Marly">
+<meta property="og:image" content="https://cyrillebier.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cyrille BIER, professeur de lycée professionnel en maintenance automobile">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Cpath d=%27M13 2 4 14h7l-1 8 9-12h-7z%27 fill=%27%231E5A8C%27/%3E%3C/svg%3E">
 <title>Cyrille BIER – Carte de visite</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,6 +89,28 @@ section h3{margin:0 0 12px;font:600 11px 'JetBrains Mono',monospace;letter-spaci
 .p3d p{margin:0;font-size:14px;line-height:1.5;color:#D1D5DB}
 .p3d .meta{font-size:11px;color:#8A939E}
 .lieu{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+.timeline{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-direction:column;gap:10px}
+.timeline li{display:flex;gap:12px;align-items:baseline;font-size:14px;line-height:1.45;color:#D1D5DB}
+.tl-k{flex:0 0 92px;font:500 11px 'JetBrains Mono',monospace;letter-spacing:.5px;color:var(--blue-l);text-transform:uppercase}
+.sub-h{margin:16px 0 8px;font-size:13px;font-weight:600;color:var(--text)}
+.pfmp{border-color:rgba(95,168,224,.45)}
+.pfmp .where{margin-bottom:10px}
+.where.small{font-size:13px;color:var(--muted)}
+.where.center{text-align:center;margin:10px 0 0}
+.tags.lv{margin-bottom:12px}
+.pf{margin-top:4px}
+.inl{color:#93C5FD}
+.map.mapfacade{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:14px;text-align:center;border:1px dashed #3A4552}
+.mapload{min-height:44px;padding:0 16px;border-radius:10px;border:0;background:var(--blue);color:#fff;font:600 14px Inter,sans-serif;cursor:pointer}
+.mapload:hover{background:#23679F}
+.mapload:focus-visible,.linkbtn:focus-visible{outline:2px solid var(--blue-l);outline-offset:2px}
+.mapnote{font-size:11.5px;color:var(--muted);line-height:1.4}
+footer{display:flex;flex-direction:column;align-items:center;gap:10px}
+.linkbtn{background:none;border:0;color:var(--muted);font:500 12px Inter,sans-serif;text-decoration:underline;cursor:pointer;min-height:36px}
+.ml[hidden]{display:none}
+.ml{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-family:Inter,sans-serif;font-size:12px;line-height:1.55;color:#C3C9D1}
+.ml p{margin:0 0 8px}.ml p:last-child{margin:0}
+.foot{margin:0}
 .lieu .where{flex:1 1 140px}
 .acad2{color:var(--muted);font-size:13px}
 .mapwrap{flex:999 1 220px;min-width:0;display:flex;flex-direction:column;gap:8px}
@@ -166,6 +196,38 @@ footer{text-align:center;font-size:11px;color:#8A939E}
   </div>
 </section>
 
+<section aria-labelledby="h-parcours">
+  <h3 id="h-parcours">Parcours &amp; habilitations</h3>
+  <ul class="timeline">
+    <li><span class="tl-k">Aujourd’hui</span><span class="tl-v">Professeur de Lycée Professionnel – Bac Pro MVA, Lycée André Citroën</span></li>
+    <li><span class="tl-k">Avant</span><span class="tl-v">Technicien 411 – Groupe Volkswagen</span></li>
+    <li><span class="tl-k">Avant</span><span class="tl-v">Technicien service – BMW</span></li>
+  </ul>
+  <p class="sub-h">Habilitations électriques véhicules (à jour)</p>
+  <div class="tags">
+    <span class="tag hv">BCL</span>
+    <span class="tag hv">B2VL</span>
+  </div>
+  <p class="sub-h">Outils de diagnostic maîtrisés</p>
+  <div class="tags">
+    <span class="tag">Audi</span><span class="tag">BMW</span><span class="tag">Renault</span><span class="tag">Autel</span><span class="tag">Hella Gutmann</span><span class="tag">Würth</span><span class="tag">TEXA</span>
+  </div>
+</section>
+
+<section class="pfmp" aria-labelledby="h-pfmp">
+  <h3 id="h-pfmp">Entreprises : accueillez un élève</h3>
+  <p class="where">Je recherche des <strong>entreprises d’accueil pour les PFMP</strong> (stages) des élèves de <strong>Bac Pro Maintenance des Véhicules Automobiles</strong>, option véhicules particuliers.</p>
+  <div class="tags lv" aria-label="Niveaux concernés">
+    <span class="tag">Seconde</span><span class="tag">Première</span><span class="tag">Terminale</span>
+  </div>
+  <p class="where small">Garages indépendants, concessions, centres auto, spécialistes VE/hybrides : contactez-moi, je vous présente le déroulé, le suivi et les attendus de la formation.</p>
+  <a class="primary pf" href="mailto:cyrille.bier@ac-nancy-metz.fr?subject=Proposition%20de%20stage%20PFMP%20%E2%80%93%20Bac%20Pro%20MVA&amp;body=Bonjour%20Monsieur%20Bier%2C%0A%0ANotre%20entreprise%20souhaite%20accueillir%20un%20%C3%A9l%C3%A8ve%20du%20Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%20en%20p%C3%A9riode%20de%20formation%20en%20milieu%20professionnel%20%28PFMP%29.%0A%0AEntreprise%20%3A%0AAdresse%20%3A%0AActivit%C3%A9%20%28garage%2C%20concession%2C%20centre%20auto%E2%80%A6%29%20%3A%0AContact%20%28nom%2C%20fonction%2C%20t%C3%A9l%C3%A9phone%29%20%3A%0ANiveau%20souhait%C3%A9%20%282nde%20/%201re%20/%20Terminale%29%20%3A%0AP%C3%A9riode%20envisag%C3%A9e%20%3A%0A%0ACordialement%2C">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5"/></svg>
+    Proposer un stage
+  </a>
+  <p class="where small center">ou par téléphone : <a class="inl" href="tel:+33627673436">06 27 67 34 36</a></p>
+</section>
+
 <section id="g3d" class="g3d" aria-labelledby="h-3d" hidden>
   <h3 id="h-3d">Mes créations 3D</h3>
   <p class="intro">Outillage et pièces conçus pour l’atelier et les TP de Bac Pro MVA.</p>
@@ -194,7 +256,11 @@ footer{text-align:center;font-size:11px;color:#8A939E}
         <button type="button" class="mt" data-t="m" aria-pressed="true">Plan</button>
         <button type="button" class="mt" data-t="k" aria-pressed="false">Satellite</button>
       </div>
-      <iframe id="gmap" class="map" title="Carte Google Maps du Lycée André Citroën à Marly" src="https://maps.google.com/maps?q=Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%2C%205%20rue%20du%20XIe%20d%27Aviation%2C%2057155%20Marly&amp;t=m&amp;z=16&amp;hl=fr&amp;output=embed" data-q="Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%2C%205%20rue%20du%20XIe%20d%27Aviation%2C%2057155%20Marly" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div id="gmap" class="map mapfacade" data-q="Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%2C%205%20rue%20du%20XIe%20d%27Aviation%2C%2057155%20Marly" data-t="m">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#5FA8E0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <button type="button" class="mapload" id="mapload">Afficher la carte</button>
+        <span class="mapnote">Charge Google Maps, qui dépose ses propres cookies.</span>
+      </div>
       <a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%2C%205%20rue%20du%20XIe%20d%27Aviation%2C%2057155%20Marly">Ouvrir dans Google Maps ↗</a>
     </div>
   </div>
@@ -202,7 +268,17 @@ footer{text-align:center;font-size:11px;color:#8A939E}
 
 <button class="ghost" id="copyCard" type="button">Copier mes coordonnées</button>
 
-<footer class="mono">CAN-H ▲ · CAN-L ▼ · 500 kbit/s</footer>
+<footer>
+  <button type="button" class="linkbtn" id="mlBtn" aria-expanded="false" aria-controls="ml">Mentions légales</button>
+  <div id="ml" class="ml" hidden>
+    <p><strong>Éditeur et responsable de la publication :</strong> Cyrille BIER – cyrille.bier@ac-nancy-metz.fr</p>
+    <p><strong>Hébergeur :</strong> GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis – github.com</p>
+    <p><strong>Nature du site :</strong> page personnelle à caractère professionnel. Elle n’engage ni le Lycée André Citroën ni l’Académie de Nancy-Metz.</p>
+    <p><strong>Données et cookies :</strong> ce site ne dépose aucun cookie et ne collecte aucune donnée. La carte Google Maps n’est chargée que si vous cliquez sur « Afficher la carte » ; Google peut alors déposer ses propres cookies. Les liens externes (LinkedIn, Google Maps) relèvent des politiques de ces services.</p>
+    <p><strong>Contenus :</strong> textes, photos et modèles 3D © Cyrille BIER, sauf mention contraire. Les marques citées appartiennent à leurs propriétaires respectifs.</p>
+  </div>
+  <p class="mono foot">CAN-H ▲ · CAN-L ▼ · 500 kbit/s</p>
+</footer>
 </main>
 
 <script>
@@ -240,13 +316,23 @@ footer{text-align:center;font-size:11px;color:#8A939E}
   if(location.hash==='#impression-3d'){show3d(true,true);}
   window.addEventListener('hashchange',function(){if(location.hash==='#impression-3d')show3d(true,true);});
 
-  var gm=document.getElementById('gmap');
+  var gm=document.getElementById('gmap'),mapQ=gm.dataset.q,mapT='m',mapOn=false;
+  function mapUrl(){return 'https://maps.google.com/maps?q='+mapQ+'&t='+mapT+'&z='+(mapT==='k'?'18':'16')+'&hl=fr&output=embed';}
+  function loadMap(){
+    if(!mapOn){var f=document.createElement('iframe');f.className='map';f.title='Carte Google Maps du Lycée André Citroën à Marly';f.setAttribute('allowfullscreen','');f.referrerPolicy='no-referrer-when-downgrade';f.src=mapUrl();gm.replaceWith(f);gm=f;mapOn=true;}
+    else{gm.src=mapUrl();}
+  }
+  document.getElementById('mapload').addEventListener('click',loadMap);
   document.querySelectorAll('.mt').forEach(function(b){
     b.addEventListener('click',function(){
-      gm.src='https://maps.google.com/maps?q='+gm.dataset.q+'&t='+b.dataset.t+'&z='+(b.dataset.t==='k'?'18':'16')+'&hl=fr&output=embed';
+      mapT=b.dataset.t;
       document.querySelectorAll('.mt').forEach(function(o){o.setAttribute('aria-pressed',o===b?'true':'false');});
+      if(mapOn){gm.src=mapUrl();}
     });
   });
+
+  var mlB=document.getElementById('mlBtn'),ml=document.getElementById('ml');
+  mlB.addEventListener('click',function(){var o=ml.hidden;ml.hidden=!o;mlB.setAttribute('aria-expanded',o?'true':'false');if(o)ml.scrollIntoView({behavior:'smooth',block:'nearest'});});
 
   document.getElementById('copyCard').addEventListener('click',function(){
     if(navigator.clipboard&&navigator.clipboard.writeText){
