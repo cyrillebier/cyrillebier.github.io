@@ -89,6 +89,8 @@ section h3{margin:0 0 12px;font:600 11px 'JetBrains Mono',monospace;letter-spaci
 .p3d p{margin:0;font-size:14px;line-height:1.5;color:#D1D5DB}
 .p3d .meta{font-size:11px;color:#8A939E}
 .lieu{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}
+.diag-img{aspect-ratio:3/2!important;object-position:top left}
+.lvl{margin:-4px 0 0!important;font-size:12px!important;color:var(--blue-l)!important}
 .timeline{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-direction:column;gap:10px}
 .timeline li{display:flex;gap:12px;align-items:baseline;font-size:14px;line-height:1.45;color:#D1D5DB}
 .tl-k{flex:0 0 92px;font:500 11px 'JetBrains Mono',monospace;letter-spacing:.5px;color:var(--blue-l);text-transform:uppercase}
@@ -190,7 +192,7 @@ footer{text-align:center;font-size:11px;color:#8A939E}
     <span class="tag">Bac Pro MVA</span>
     <span class="tag">Véhicules particuliers</span>
     <span class="tag hv">Électrique &amp; hybride</span>
-    <span class="tag">Diagnostic</span>
+    <button type="button" class="tag tag-btn" id="btnDiag" aria-expanded="false" aria-controls="gdiag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6v4H9zM9 15h.01M15 15h.01M12 18v-3"/></svg>Diagnostic<span class="chev" aria-hidden="true">▾</span></button>
     <button type="button" class="tag tag-btn" id="btn3d" aria-expanded="false" aria-controls="g3d"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>Impression 3D<span class="chev" aria-hidden="true">▾</span></button>
   </div>
 </section>
@@ -225,6 +227,22 @@ footer{text-align:center;font-size:11px;color:#8A939E}
     Proposer un stage
   </a>
   <p class="where small center">ou par téléphone : <a class="inl" href="tel:+33627673436">06 27 67 34 36</a></p>
+</section>
+
+<section id="gdiag" class="g3d" aria-labelledby="h-diag" hidden>
+  <h3 id="h-diag">Mes ressources diagnostic</h3>
+  <p class="intro">Modules interactifs conçus pour mes élèves de Bac Pro MVA et utilisés sur Éléa (SCORM). Ici, ils fonctionnent en mode démonstration : la note n’est pas enregistrée.</p>
+  <article class="p3d">
+    <img class="p3d-main diag-img" src="diag/multimetre.jpg" alt="Écran d’accueil du module Atelier multimètre : multimètre virtuel et six mesures à réaliser" loading="lazy" width="900" height="600">
+    <h4>Atelier multimètre</h4>
+    <p class="lvl mono">1re Bac Pro MVA · Mesures électriques 12 V</p>
+    <p>Six mesures d’atelier sur un multimètre virtuel : deux en voltmètre (tension batterie, chute de tension), deux en ohmmètre (sonde CTN, injecteur), deux en ampèremètre (courant de repos, courant lampe). L’élève règle le calibre, branche les cordons, pose les pointes sur le schéma et relève la valeur ; chaque erreur de manipulation coûte des points.</p>
+    <a class="primary pf" href="modules/atelier-multimetre/" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      Tester le module
+    </a>
+    <p class="meta mono">Module SCORM 1.2 · conçu par Cyrille BIER · s’ouvre dans un nouvel onglet</p>
+  </article>
 </section>
 
 <section id="g3d" class="g3d" aria-labelledby="h-3d" hidden>
@@ -332,6 +350,12 @@ footer{text-align:center;font-size:11px;color:#8A939E}
 
   var mlB=document.getElementById('mlBtn'),ml=document.getElementById('ml');
   mlB.addEventListener('click',function(){var o=ml.hidden;ml.hidden=!o;mlB.setAttribute('aria-expanded',o?'true':'false');if(o)ml.scrollIntoView({behavior:'smooth',block:'nearest'});});
+
+  var bD=document.getElementById('btnDiag'),gD=document.getElementById('gdiag');
+  function showDiag(open,scroll){gD.hidden=!open;bD.setAttribute('aria-expanded',open?'true':'false');if(open&&scroll){gD.scrollIntoView({behavior:'smooth',block:'start'});}}
+  bD.addEventListener('click',function(){showDiag(gD.hidden,true);});
+  if(location.hash==='#diagnostic'){showDiag(true,true);}
+  window.addEventListener('hashchange',function(){if(location.hash==='#diagnostic')showDiag(true,true);});
 
   document.getElementById('copyCard').addEventListener('click',function(){
     if(navigator.clipboard&&navigator.clipboard.writeText){
