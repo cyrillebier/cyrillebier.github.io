@@ -103,6 +103,17 @@ section h3{margin:0 0 12px;font:600 11px 'JetBrains Mono',monospace;letter-spaci
 .res{display:block;margin-top:12px;padding:10px 12px;border-radius:8px;background:#0E1216;border:1px solid rgba(95,168,224,.45);color:#93C5FD;font-size:14px;line-height:1.5}
 .calc .fl{margin:8px 0 0;font-size:11px;color:#8A939E}
 .lnk{display:flex;align-items:center;justify-content:center;text-decoration:none;margin-top:12px}
+.pfmp-cal{display:flex;flex-direction:column;gap:10px;margin:0 0 14px}
+.lvrow{background:#0E1216;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.lvname{margin:0 0 6px;font:600 13px Inter,sans-serif;color:var(--blue-l)}
+.pers{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.per{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:13.5px;color:#D1D5DB}
+.per .dur{font-size:11px;color:var(--muted)}
+.per .st{font-size:10.5px;padding:1px 7px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.per .st:empty{display:none}
+.per.now .st{border-color:rgba(249,115,22,.6);color:#FDBA74}
+.per.next .st{border-color:rgba(95,168,224,.6);color:#93C5FD}
+.per.past{color:#6B7380}.per.past span:first-child{text-decoration:line-through}
 .timeline{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-direction:column;gap:10px}
 .timeline li{display:flex;gap:12px;align-items:baseline;font-size:14px;line-height:1.45;color:#D1D5DB}
 .tl-k{flex:0 0 92px;font:500 11px 'JetBrains Mono',monospace;letter-spacing:.5px;color:var(--blue-l);text-transform:uppercase}
@@ -237,9 +248,12 @@ footer{text-align:center;font-size:11px;color:#8A939E}
 <section class="pfmp" aria-labelledby="h-pfmp">
   <h3 id="h-pfmp">Entreprises : accueillez un élève</h3>
   <p class="where">Je recherche des <strong>entreprises d’accueil pour les PFMP</strong> (stages) des élèves de <strong>Bac Pro Maintenance des Véhicules Automobiles</strong>, option véhicules légers.</p>
-  <div class="tags lv" aria-label="Niveaux concernés">
-    <span class="tag">Seconde</span><span class="tag">Première</span><span class="tag">Terminale</span>
-  </div>
+<p class="sub-h">Périodes de PFMP 2026-2027</p>
+  <div class="pfmp-cal">
+    <div class="lvrow"><p class="lvname">Seconde</p><ul class="pers"><li class="per" data-start="2027-02-08" data-end="2027-02-19"><span>du 08/02 au 19/02/2027</span><span class="dur mono">2 sem.</span><span class="st mono"></span></li><li class="per" data-start="2027-06-07" data-end="2027-07-02"><span>du 07/06 au 02/07/2027</span><span class="dur mono">4 sem.</span><span class="st mono"></span></li></ul></div>
+    <div class="lvrow"><p class="lvname">Première</p><ul class="pers"><li class="per" data-start="2026-11-23" data-end="2026-12-18"><span>du 23/11 au 18/12/2026</span><span class="dur mono">4 sem.</span><span class="st mono"></span></li><li class="per" data-start="2027-05-03" data-end="2027-05-28"><span>du 03/05 au 28/05/2027</span><span class="dur mono">4 sem.</span><span class="st mono"></span></li></ul></div>
+    <div class="lvrow"><p class="lvname">Terminale</p><ul class="pers"><li class="per" data-start="2026-11-02" data-end="2026-11-20"><span>du 02/11 au 20/11/2026</span><span class="dur mono">3 sem.</span><span class="st mono"></span></li><li class="per" data-start="2027-03-15" data-end="2027-04-16"><span>du 15/03 au 16/04/2027</span><span class="dur mono">5 sem.</span><span class="st mono"></span></li></ul></div>
+    </div>
   <p class="where small">Garages indépendants, concessions, centres auto, spécialistes VE/hybrides : contactez-moi, je vous présente le déroulé, le suivi et les attendus de la formation.</p>
   <a class="primary pf" href="mailto:cyrille.bier@ac-nancy-metz.fr?subject=Proposition%20de%20stage%20PFMP%20%E2%80%93%20Bac%20Pro%20MVA&amp;body=Bonjour%20Monsieur%20Bier%2C%0A%0ANotre%20entreprise%20souhaite%20accueillir%20un%20%C3%A9l%C3%A8ve%20du%20Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%20en%20p%C3%A9riode%20de%20formation%20en%20milieu%20professionnel%20%28PFMP%29.%0A%0AEntreprise%20%3A%0AAdresse%20%3A%0AActivit%C3%A9%20%28garage%2C%20concession%2C%20centre%20auto%E2%80%A6%29%20%3A%0AContact%20%28nom%2C%20fonction%2C%20t%C3%A9l%C3%A9phone%29%20%3A%0ANiveau%20souhait%C3%A9%20%282nde%20/%201re%20/%20Terminale%29%20%3A%0AP%C3%A9riode%20envisag%C3%A9e%20%3A%0A%0ACordialement%2C">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5"/></svg>
@@ -463,6 +477,17 @@ footer{text-align:center;font-size:11px;color:#8A939E}
   document.getElementById('calcP').addEventListener('submit',function(e){e.preventDefault();});
   document.getElementById('calcT').addEventListener('submit',function(e){e.preventDefault();});
   calcP();calcT();
+
+  (function(){
+    var t=new Date();t.setHours(0,0,0,0);var nextEl=null,nextD=null;
+    document.querySelectorAll('.per').forEach(function(el){
+      var a=new Date(el.dataset.start+'T00:00:00'),b=new Date(el.dataset.end+'T23:59:59'),st=el.querySelector('.st');
+      if(b<t){el.classList.add('past');st.textContent='terminée';}
+      else if(a<=t){el.classList.add('now');st.textContent='en cours';}
+      else if(!nextD||a<nextD){nextD=a;nextEl=el;}
+    });
+    if(nextEl){nextEl.classList.add('next');nextEl.querySelector('.st').textContent='prochaine';}
+  })();
 
   document.getElementById('copyCard').addEventListener('click',function(){
     if(navigator.clipboard&&navigator.clipboard.writeText){
