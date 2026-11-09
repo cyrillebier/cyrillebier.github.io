@@ -117,6 +117,20 @@ section h3{margin:0 0 12px;font:600 11px 'JetBrains Mono',monospace;letter-spaci
 .att-h{margin:10px 0 6px;font:500 10.5px 'JetBrains Mono',monospace;letter-spacing:.4px;text-transform:uppercase;color:var(--muted)}
 .att{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
 .att li{font-size:12px;line-height:1.3;padding:4px 9px;border-radius:999px;background:#161C22;border:1px solid var(--line);color:#D1D5DB}
+.ftile{perspective:1000px;cursor:pointer}
+.ft-inner{display:grid;transition:transform .6s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.ftile.flipped .ft-inner{transform:rotateY(180deg)}
+.ft-face{grid-area:1/1;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#0E1216;border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;flex-direction:column}
+.ft-back{transform:rotateY(180deg);border-color:rgba(95,168,224,.45)}
+.ft-front{justify-content:center}
+.ft-front .ft-btn{margin-top:4px}
+.ft-face .att{display:block;font-size:13px;line-height:1.55;color:#D1D5DB}
+.ft-face .att li{display:inline;padding:0;border:0;background:none;font-size:13px;border-radius:0}
+.ft-face .att li+li::before{content:' · ';color:var(--blue-l)}
+.ft-btn{align-self:flex-start;margin-top:auto;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:8px 0 0;background:none;border:0;color:#93C5FD;font:500 12.5px Inter,sans-serif;cursor:pointer}
+.ft-btn:focus-visible{outline:2px solid var(--blue-l);outline-offset:2px;border-radius:4px}
+.ft-face .att{margin-bottom:6px}
+@media (prefers-reduced-motion:reduce){.ft-inner{transition:none}}
 .timeline{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-direction:column;gap:10px}
 .timeline li{display:flex;gap:12px;align-items:baseline;font-size:14px;line-height:1.45;color:#D1D5DB}
 .tl-k{flex:0 0 92px;font:500 11px 'JetBrains Mono',monospace;letter-spacing:.5px;color:var(--blue-l);text-transform:uppercase}
@@ -253,9 +267,24 @@ footer{text-align:center;font-size:11px;color:#8A939E}
   <p class="where">Je recherche des <strong>entreprises d’accueil pour les PFMP</strong> (stages) des élèves de <strong>Bac Pro Maintenance des Véhicules Automobiles</strong>, option véhicules légers.</p>
 <p class="sub-h">Périodes de PFMP 2026-2027</p>
   <div class="pfmp-cal">
-    <div class="lvrow"><p class="lvname">Seconde</p><ul class="pers"><li class="per" data-start="2027-02-08" data-end="2027-02-19"><span>du 08/02 au 19/02/2027</span><span class="dur mono">2 sem.</span><span class="st mono"></span></li><li class="per" data-start="2027-06-07" data-end="2027-07-02"><span>du 07/06 au 02/07/2027</span><span class="dur mono">4 sem.</span><span class="st mono"></span></li></ul><p class="att-h">Attendus en entreprise</p><ul class="att"><li>Service rapide</li><li>Maintenance préventive (entretien)</li><li>Pneumatiques</li><li>Freinage</li><li>Éclairage</li></ul></div>
-    <div class="lvrow"><p class="lvname">Première</p><ul class="pers"><li class="per" data-start="2026-11-23" data-end="2026-12-18"><span>du 23/11 au 18/12/2026</span><span class="dur mono">4 sem.</span><span class="st mono"></span></li><li class="per" data-start="2027-05-03" data-end="2027-05-28"><span>du 03/05 au 28/05/2027</span><span class="dur mono">4 sem.</span><span class="st mono"></span></li></ul><p class="att-h">Attendus en entreprise</p><ul class="att"><li>Maintenance corrective</li><li>Mécanique : distribution, embrayage</li><li>Électricité : charge, démarrage</li><li>Diagnostic de premier niveau</li></ul></div>
-    <div class="lvrow"><p class="lvname">Terminale</p><ul class="pers"><li class="per" data-start="2026-11-02" data-end="2026-11-20"><span>du 02/11 au 20/11/2026</span><span class="dur mono">3 sem.</span><span class="st mono"></span></li><li class="per" data-start="2027-03-15" data-end="2027-04-16"><span>du 15/03 au 16/04/2027</span><span class="dur mono">5 sem.</span><span class="st mono"></span></li></ul><p class="att-h">Attendus en entreprise</p><ul class="att"><li>Diagnostic complexe</li><li>ADAS</li><li>Véhicules électriques & hybrides</li><li>Diagnostic mécanique</li><li>Géométrie</li><li>Lecture de schémas électriques</li><li>Pose d’accessoires</li><li>Mise à jour des calculateurs</li></ul></div>
+    <div class="ftile">
+      <div class="ft-inner">
+        <div class="ft-face ft-front"><p class="lvname">Seconde</p><ul class="pers"><li class="per" data-start="2027-02-08" data-end="2027-02-19"><span>du 08/02 au 19/02/2027</span><span class="dur mono">2 sem.</span><span class="st mono"></span></li><li class="per" data-start="2027-06-07" data-end="2027-07-02"><span>du 07/06 au 02/07/2027</span><span class="dur mono">4 sem.</span><span class="st mono"></span></li></ul><button type="button" class="ft-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Voir les 5 attendus</button></div>
+        <div class="ft-face ft-back" aria-hidden="true" inert><p class="lvname">Seconde · attendus en entreprise</p><ul class="att"><li>Service rapide</li><li>Maintenance préventive (entretien)</li><li>Pneumatiques</li><li>Freinage</li><li>Éclairage</li></ul><button type="button" class="ft-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Voir les dates</button></div>
+      </div>
+    </div>
+    <div class="ftile">
+      <div class="ft-inner">
+        <div class="ft-face ft-front"><p class="lvname">Première</p><ul class="pers"><li class="per" data-start="2026-11-23" data-end="2026-12-18"><span>du 23/11 au 18/12/2026</span><span class="dur mono">4 sem.</span><span class="st mono"></span></li><li class="per" data-start="2027-05-03" data-end="2027-05-28"><span>du 03/05 au 28/05/2027</span><span class="dur mono">4 sem.</span><span class="st mono"></span></li></ul><button type="button" class="ft-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Voir les 4 attendus</button></div>
+        <div class="ft-face ft-back" aria-hidden="true" inert><p class="lvname">Première · attendus en entreprise</p><ul class="att"><li>Maintenance corrective</li><li>Mécanique : distribution, embrayage</li><li>Électricité : charge, démarrage</li><li>Diagnostic de premier niveau</li></ul><button type="button" class="ft-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Voir les dates</button></div>
+      </div>
+    </div>
+    <div class="ftile">
+      <div class="ft-inner">
+        <div class="ft-face ft-front"><p class="lvname">Terminale</p><ul class="pers"><li class="per" data-start="2026-11-02" data-end="2026-11-20"><span>du 02/11 au 20/11/2026</span><span class="dur mono">3 sem.</span><span class="st mono"></span></li><li class="per" data-start="2027-03-15" data-end="2027-04-16"><span>du 15/03 au 16/04/2027</span><span class="dur mono">5 sem.</span><span class="st mono"></span></li></ul><button type="button" class="ft-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Voir les 8 attendus</button></div>
+        <div class="ft-face ft-back" aria-hidden="true" inert><p class="lvname">Terminale · attendus en entreprise</p><ul class="att"><li>Diagnostic complexe</li><li>ADAS</li><li>Véhicules électriques & hybrides</li><li>Diagnostic mécanique</li><li>Géométrie</li><li>Lecture de schémas électriques</li><li>Pose d’accessoires</li><li>Mise à jour des calculateurs</li></ul><button type="button" class="ft-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Voir les dates</button></div>
+      </div>
+    </div>
     </div>
   <p class="where small">Garages indépendants, concessions, centres auto, spécialistes VE/hybrides : contactez-moi, je vous présente le déroulé, le suivi et les attendus de la formation.</p>
   <a class="primary pf" href="mailto:cyrille.bier@ac-nancy-metz.fr?subject=Proposition%20de%20stage%20PFMP%20%E2%80%93%20Bac%20Pro%20MVA&amp;body=Bonjour%20Monsieur%20Bier%2C%0A%0ANotre%20entreprise%20souhaite%20accueillir%20un%20%C3%A9l%C3%A8ve%20du%20Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%20en%20p%C3%A9riode%20de%20formation%20en%20milieu%20professionnel%20%28PFMP%29.%0A%0AEntreprise%20%3A%0AAdresse%20%3A%0AActivit%C3%A9%20%28garage%2C%20concession%2C%20centre%20auto%E2%80%A6%29%20%3A%0AContact%20%28nom%2C%20fonction%2C%20t%C3%A9l%C3%A9phone%29%20%3A%0ANiveau%20souhait%C3%A9%20%282nde%20/%201re%20/%20Terminale%29%20%3A%0AP%C3%A9riode%20envisag%C3%A9e%20%3A%0A%0ACordialement%2C">
@@ -491,6 +520,17 @@ footer{text-align:center;font-size:11px;color:#8A939E}
     });
     if(nextEl){nextEl.classList.add('next');nextEl.querySelector('.st').textContent='prochaine';}
   })();
+
+  document.querySelectorAll('.ftile').forEach(function(t){
+    var f=t.querySelector('.ft-front'),b=t.querySelector('.ft-back');
+    function flip(){
+      var on=!t.classList.contains('flipped');t.classList.toggle('flipped',on);
+      b.setAttribute('aria-hidden',on?'false':'true');f.setAttribute('aria-hidden',on?'true':'false');
+      if(on){b.removeAttribute('inert');f.setAttribute('inert','');b.querySelector('.ft-btn').focus({preventScroll:true});}
+      else{f.removeAttribute('inert');b.setAttribute('inert','');f.querySelector('.ft-btn').focus({preventScroll:true});}
+    }
+    t.addEventListener('click',flip);
+  });
 
   document.getElementById('copyCard').addEventListener('click',function(){
     if(navigator.clipboard&&navigator.clipboard.writeText){
