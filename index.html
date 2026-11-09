@@ -54,6 +54,7 @@ body{background-image:linear-gradient(#141A20 1px,transparent 1px),linear-gradie
 .primary:focus-visible,.act:focus-visible,.ghost:focus-visible{outline:2px solid var(--blue-l);outline-offset:3px}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .act{display:flex;flex-direction:column;gap:6px;padding:14px;border-radius:12px;background:var(--panel);border:1px solid var(--line);color:var(--text);text-decoration:none;min-height:84px}
+.grid .act:last-child:nth-child(odd){grid-column:1/-1}
 .act:hover{border-color:#3A4552}
 .act .lab{font-weight:600;font-size:14px;display:flex;align-items:center;gap:8px}
 .act .val{font-size:12px;color:var(--muted);word-break:break-word}
@@ -179,10 +180,6 @@ footer{text-align:center;font-size:11px;color:#8A939E}
   <a class="act" href="https://www.linkedin.com/in/bier-cyrille-b68646ba">
     <span class="lab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5FA8E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</span>
     <span class="val">in/bier-cyrille-b68646ba</span>
-  </a>
-  <a class="act" href="https://www.google.com/maps/search/?api=1&amp;query=Lyc%C3%A9e%20Andr%C3%A9%20Citro%C3%ABn%2C%205%20rue%20du%20XIe%20d%27Aviation%2C%2057155%20Marly">
-    <span class="lab"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5FA8E0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Itinéraire</span>
-    <span class="val">Lycée André Citroën, Marly</span>
   </a>
 </nav>
 
