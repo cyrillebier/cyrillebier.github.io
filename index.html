@@ -113,6 +113,10 @@ footer{display:flex;flex-direction:column;align-items:center;gap:10px}
 .ml[hidden]{display:none}
 .ml{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-family:Inter,sans-serif;font-size:12px;line-height:1.55;color:#C3C9D1}
 .ml p{margin:0 0 8px}.ml p:last-child{margin:0}
+.formulas{text-align:center;font-size:11.5px;line-height:1.7;color:#AEB4BC}
+.formulas p{margin:0}
+.formulas .fk{display:table;margin:8px auto 2px;padding:0 6px;border:1px solid var(--line);border-radius:6px;color:var(--blue-l);font-size:10px;letter-spacing:.4px;text-transform:uppercase}
+.formulas .fl{margin-top:4px;font-size:10px;color:#8A939E}
 .foot{margin:0}
 .lieu .where{flex:1 1 140px}
 .acad2{color:var(--muted);font-size:13px}
@@ -208,7 +212,7 @@ footer{text-align:center;font-size:11px;color:#8A939E}
   </div>
   <p class="sub-h">Outils de diagnostic maîtrisés</p>
   <div class="tags">
-    <span class="tag">AUDI</span><span class="tag">BMW</span><span class="tag">RENAULT</span><span class="tag">AUTEL</span><span class="tag">HELLA GUTMANN</span><span class="tag">WÜRTH</span><span class="tag">TEXA</span>
+    <span class="tag">AUDI</span><span class="tag">BMW</span><span class="tag">RENAULT</span><span class="tag">AUTEL</span><span class="tag">HELLA GUTMANN</span><span class="tag">WÜRTH</span><span class="tag">TEXA</span><span class="tag">TESLA</span>
   </div>
 </section>
 
@@ -312,6 +316,11 @@ footer{text-align:center;font-size:11px;color:#8A939E}
     <p><strong>Nature du site :</strong> page personnelle à caractère professionnel. Elle n’engage ni le Lycée André Citroën ni l’Académie de Nancy-Metz.</p>
     <p><strong>Données et cookies :</strong> ce site ne dépose aucun cookie et ne collecte aucune donnée. La carte Google Maps n’est chargée que si vous cliquez sur « Afficher la carte » ; Google peut alors déposer ses propres cookies. Les liens externes (LinkedIn, Google Maps) relèvent des politiques de ces services.</p>
     <p><strong>Contenus :</strong> textes, photos et modèles 3D © Cyrille BIER, sauf mention contraire. Les marques citées appartiennent à leurs propriétaires respectifs.</p>
+  </div>
+  <div class="formulas mono" aria-label="Formules d’atelier">
+    <p><span class="fk">Moteur thermique</span> P (W) = C (N·m) × 2π × N (tr/min) / 60</p>
+    <p><span class="fk">Recharge VE</span> t (h) = E (kWh) / [P (kW) × η]</p>
+    <p class="fl">C : couple · N : régime · E : énergie à recharger · P : puissance de charge · η : rendement de charge (≈ 0,9)</p>
   </div>
   <p class="mono foot">CAN-H ▲ · CAN-L ▼ · 500 kbit/s</p>
 </footer>
